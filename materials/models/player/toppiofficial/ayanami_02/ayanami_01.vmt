@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/player/toppiofficial/ayanami_02/ayanami_01"
+
+	$lightwarptexture "models/player/toppiofficial/shared/shader/toon_2"
+
+	$phong 1
+	$phongexponenttexture "models/player/toppiofficial/shared/shader/phong_exp"
+	$phongfresnelranges "[0 0 1]"
+	$phongalbedotint 1
+	$phongboost 4
+
+	$nodecal 1
+}

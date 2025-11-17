@@ -1,0 +1,10 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/nuclearsilo/touhou/yukari_yakumo/yukari"
+	$lightwarptexture "models/player/nuclearsilo/shared/lightwarp_anime"
+	$color "[.95 .95 .95]"
+	$alphatestreference .6
+	"$halflambert"	1
+	"$nodecal"	1
+	"$alphatest" "1"
+}

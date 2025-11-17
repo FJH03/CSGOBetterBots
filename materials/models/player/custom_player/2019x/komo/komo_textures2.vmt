@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/custom_player/2019x/komo/komo_textures"
+	$nocull 1
+	//"$alphatest" "1"
+       	//$alphatestreference .45
+	$translucent 1
+}
+

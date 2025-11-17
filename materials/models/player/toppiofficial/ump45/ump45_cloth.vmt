@@ -1,0 +1,15 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/toppiofficial/ump45/ump45_cloth_dm"
+	"$nocull" 1
+	"$nodecal" 1
+	
+	"$lightwarptexture" 	"models/player/toppiofficial/shared/shader/simple_shader"
+	
+	"$halflambert"	1
+	"$phong" 1
+	"$phongexponenttexture" "models/player/toppiofficial/shared/shader/phong_exp"
+	"$phongfresnelranges" "[0 0 1]"
+	"$phongalbedotint" 1
+	"$phongboost" 4
+}

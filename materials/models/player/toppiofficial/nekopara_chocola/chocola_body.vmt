@@ -1,0 +1,10 @@
+VertexLitGeneric
+{
+	$basetexture "models/player/toppiofficial/nekopara_chocola/chocola_body"
+
+	$lightwarptexture "models/player/toppiofficial/public/lightwarp"
+
+	$nocull 1
+
+	$nodecal 1
+}
