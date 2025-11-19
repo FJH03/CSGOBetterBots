@@ -68,7 +68,7 @@ public Plugin myinfo =
 	name = "BOT Inventory But Delete Glove & agent", 
 	author = "manico, [CNSR] FJH_03", 
 	description = "Gives BOTs items.", 
-	version = "1.0.2.5", 
+	version = "1.0.2.6", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -873,6 +873,12 @@ public Action Event_OnRoundStart(Event eEvent, const char[] szName, bool bDontBr
 public void Event_PlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+
+	if (IsValidPlayer(client)) {
+		// FJH_03: 真人玩家移除特殊手套
+		RemovePlayerGloves(client);
+	}
+
 	if (IsValidClient(client))
 	{
 		if (eItems_AreItemsSynced())
@@ -1360,6 +1366,31 @@ void SetWeaponProps(int client, int iEntity)
 	}
 }
 
+public void RemovePlayerGloves(int client)
+{
+    // 获取当前手套实体
+    int iEntity = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
+    
+    if (iEntity != -1 && IsValidEntity(iEntity))
+    {
+		PrintToChat(client, "您的特殊手套被禁用");
+        // 销毁手套实体
+        AcceptEntityInput(iEntity, "KillHierarchy");
+        
+        // 重置玩家的穿戴物属性
+        SetEntPropEnt(client, Prop_Send, "m_hMyWearables", -1);
+        
+        // 重置身体组为默认（无手套皮肤）
+        SetEntProp(client, Prop_Send, "m_nBody", 0);
+        
+        // 强制更新玩家外观
+        if (g_hForceUpdate != null)
+        {
+            SDKCall(g_hForceUpdate, client, -1);
+        }
+	}
+}
+
 public void OnClientDisconnect(int client)
 {
 	if (IsValidClient(client))
@@ -1381,6 +1412,11 @@ public void OnPluginEnd()
 stock bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && IsFakeClient(client) && !IsClientSourceTV(client);
+}
+
+stock bool IsValidPlayer(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsFakeClient(client) && !IsClientSourceTV(client);
 }
 
 stock int FloatToInt(const char[] szValue, any ...)
