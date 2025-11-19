@@ -11,7 +11,7 @@
 #pragma newdecls required
 
 #define PLUGIN_TAG "[-N- Arms Fix]"
-#define PLUGIN_VERSION "2.0.3"
+#define PLUGIN_VERSION "2.0.4"
 
 #define TEAM_T 		0
 #define TEAM_CT     1
@@ -79,7 +79,7 @@ ArrayList g_aMapCTModels = null;
 public Plugin myinfo = 
 {
     name = "-N- Arms Fix",
-    author = "NomisCZ (-N-)",
+    author = "NomisCZ (-N-), modified by [CNSR] FJH_03",
     description = "CS:GO models arms fix",
     version = PLUGIN_VERSION,
     url = "https://github.com/NomisCZ"
@@ -339,9 +339,10 @@ public void GenerateConfigFiles()
             kvCustom.GoBack();
             // - Key: original -
 
+#if 0
             kvServer.DeleteThis();
             kvServer.GoBack();
-
+#endif
         } else {
 
             kvCustom.GetString("nameID", nameId, sizeof(nameId), NULL_STRING);
@@ -376,8 +377,10 @@ public void GenerateConfigFiles()
         // - Key: mapName -
     }
     
+#if 0
     kvServer.Rewind();
     ExportKvToFile(kvServer, "gamemodes.txt");
+#endif
 
     kvCustom.Rewind();
     ExportKvToFile(kvCustom, "gamemodes_server.txt");
