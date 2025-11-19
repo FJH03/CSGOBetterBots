@@ -1,8 +1,0 @@
-VertexLitGeneric
-{
-	$basetexture "models/player/toppiofficial/g11/g11_body"
-
-	$lightwarptexture "models/player/toppiofficial/public/lightwarp"
-
-	$nodecal 1
-}
