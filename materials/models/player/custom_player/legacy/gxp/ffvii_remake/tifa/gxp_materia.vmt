@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\custom_player\legacy\gxp\ffvii_remake\tifa\gxp_materia"
+	"$envmap" "env_cubemap"
+}
+
+

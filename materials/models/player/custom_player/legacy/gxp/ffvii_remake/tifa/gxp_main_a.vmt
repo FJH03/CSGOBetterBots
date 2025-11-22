@@ -1,0 +1,12 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\custom_player\legacy\gxp\ffvii_remake\tifa\gxp_main_a"
+    "$bumpmap" "models\player\custom_player\legacy\gxp\ffvii_remake\tifa\gxp_main_a_n"
+	
+	"$phong" "1"
+	"$phongboost" ".15"
+	"$phongexponent" "40"
+	"$phongfresnelranges" "[.8 .8 .6]"
+}
+
+

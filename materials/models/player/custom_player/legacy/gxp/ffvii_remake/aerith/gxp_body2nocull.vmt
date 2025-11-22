@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\custom_player\legacy\gxp\ffvii_remake\aerith\gxp_body2"
+    	"$bumpmap" "models\player\custom_player\legacy\gxp\ffvii_remake\aerith\gxp_body2_n"
+	"$nocull" "1"
+
+	"$phong" "1"
+	"$phongboost" ".2"
+	"$phongexponent" "40"
+	"$phongfresnelranges" "[.2 .2 .8]"
+}
+
+
